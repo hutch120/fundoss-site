@@ -1,49 +1,46 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import InfoIcon from '@material-ui/icons/Info'
-import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
-export default function Intro () {
+export default function Header () {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Paper elevation={3} className={classes.paper}>
-        <div className={classes.container}>
-          <InfoIcon className={classes.icon} />
-          <Typography variant='body1' className={classes.intro}>
-            OpenLayers is a high-performance feature-packed Javascript library for creating interactive maps on the web. It can display map tiles, vector data and markers loaded from any source on any web page.
-            Openlayers is packed with value and released under the BSD 2-Clause License.
-          </Typography>
-        </div>
-      </Paper>
+      <Typography variant='h6' className={classes.team}>
+        We would like to introduce you to a few of your OSS developer team. These are the developers who are down in the engine room making sure things keep running.
+      </Typography>
+      <Typography variant='h6' className={classes.team}>
+        While you are checking out your team, consider the impact these people have on your business.<br />
+        What value do these individuals provide?<br />
+        What percentage of your business software relies on the systems they maintain to operate effectively?<br />
+        Do you think it would be worth supporting these developers to allow them time to maintaining this software?<br />
+        What would happen if these developers were not maintaining the OSS products your business relies on?
+      </Typography>
     </div>
   )
 }
 
 const useStyles = makeStyles({
   root: {},
+  header: {
+    marginLeft: 10,
+    color: '#bbbbbb'
+  },
+  subheader: {
+    marginLeft: 10,
+    color: '#7d7d7d'
+  },
+  team: {
+    margin: 10,
+    color: '#7d7d7d',
+    fontSize: 16
+  },
   container: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
   },
-  paper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'left',
-    padding: 20,
-    marginBottom: 8
-  },
   icon: {
-    paddingRight: 14,
-    fontSize: 60,
-    color: '#5d5db3'
-  },
-  iconAccount: {
-    paddingRight: 14,
-    fontSize: 60,
-    color: '#3ca73c'
-  },
-  intro: {}
+    height: 40
+  }
 })

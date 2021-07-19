@@ -13,7 +13,7 @@ async function GetUser ({ login }) {
   // console.log('GetUser', login)
   let url = `https://api.github.com/users/${login}`
   if (window.location.hostname === 'localhost') {
-    url = `${process.env.PUBLIC_URL}/test/content.json`
+    url = `${process.env.PUBLIC_URL}/test/user.json`
   }
   return await API.Get({ url })
 }

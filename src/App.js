@@ -1,8 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Header from './components/Header'
-import Intro from './components/Intro'
 import Contributors from './components/Contributors'
+import About from './components/About'
 
 export default function App () {
   const classes = useStyles()
@@ -10,8 +10,8 @@ export default function App () {
     <div className={classes.root}>
       <div className={classes.workspace}>
         <Header />
-        <Intro />
         <Contributors />
+        <About />
       </div>
     </div>
   )

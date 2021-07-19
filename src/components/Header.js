@@ -7,13 +7,23 @@ export default function Intro () {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <img src={`${process.env.PUBLIC_URL}/img/openlayers.png`} className={classes.icon} />
+        <img src={`${process.env.PUBLIC_URL}/logo192.png`} className={classes.icon} />
         <Typography variant='h3' className={classes.header}>
-          OpenLayers
+          FundOSS
         </Typography>
       </div>
       <Typography variant='h5' className={classes.subheader}>
-        Ignoring Open Source Software funding is risky business!
+        Promoting funding for Open Source Software - OSS
+      </Typography>
+      <Typography variant='h6' className={classes.team}>
+        We would like to introduce you to a few of your OSS developer team. These are the developers who are down in the engine room making sure things keep running.
+      </Typography>
+      <Typography variant='h6' className={classes.team}>
+        While you are checking out your team, consider the impact these people have on your business.<br />
+        What value do these individuals provide?<br />
+        What percentage of your business software relies on these systems operating effectively?<br />
+        Do you think it would be worth supporting the developers to allow them time to maintaining the software?<br />
+        What would happen if these developers were not maintaining the OSS products your business relies on?
       </Typography>
     </div>
   )
@@ -23,13 +33,16 @@ const useStyles = makeStyles({
   root: {},
   header: {
     marginLeft: 10,
-    marginBottom: 10,
     color: '#bbbbbb'
   },
   subheader: {
     marginLeft: 10,
-    marginBottom: 18,
     color: '#7d7d7d'
+  },
+  team: {
+    margin: 10,
+    color: '#7d7d7d',
+    fontSize: 16
   },
   container: {
     display: 'flex',

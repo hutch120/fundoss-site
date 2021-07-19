@@ -4,4 +4,4 @@ https://hutch120.github.io/fundoss-site
 
 # NPM Module
 
-https://hutch120.github.io/fundoss
+https://github.com/hutch120/fundoss

@@ -12,17 +12,12 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import GithubIcon from '@material-ui/icons/GitHub'
 import PropTypes from 'prop-types'
 import GitHub from '../services/GitHub'
-import { useParams } from 'react-router-dom'
 import words from 'lodash/words'
 import head from 'lodash/head'
 
 const DETAILS_FOR_TOP_X_USERS = 2
-export default function Contributors () {
+export default function Contributors ({ org, repo }) {
   const [contributors, setContributors] = useState(null)
-  const params = useParams()
-
-  const org = params?.org
-  const repo = params?.repo
 
   if (!org || !repo) return null
 
@@ -51,7 +46,10 @@ export default function Contributors () {
   )
 }
 
-Contributors.propTypes = {}
+Contributors.propTypes = {
+  org: PropTypes.string,
+  repo: PropTypes.string
+}
 
 function Profile ({ contributor, org, repo, index }) {
   const classes = useStyles()

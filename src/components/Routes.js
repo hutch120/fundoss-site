@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, useParams } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Header from './Header'
 import Contributors from './Contributors'
@@ -8,13 +8,17 @@ import Intro from './Intro'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 
+function useQuery () {
+  return new URLSearchParams(useLocation().search)
+}
+
 export default function Routes () {
   const classes = useStyles()
-  const params = useParams()
+  const query = useQuery()
 
-  const org = params?.org
-  const repo = params?.repo
-  const isValidRepo = (org && repo)
+  const org = query.get('org')
+  const repo = query.get('repo')
+  const isValidRepo = !!(org && repo)
 
   return (
     <div className={classes.root}>
@@ -26,21 +30,21 @@ export default function Routes () {
               Checkout some of these OSS projects
             </Typography>
             <Typography variant='body1' className={classes.exampleLink}>
-              <a href='c/openlayers/openlayers'>OpenLayers</a>
+              <Link to='?org=openlayers&amp;repo=openlayers'>OpenLayers</Link>
             </Typography>
             <Typography variant='body1' className={classes.exampleLink}>
-              <a href='c/feross/buffer'>Buffer</a>
+              <Link to='?org=feross&amp;repo=buffer'>Buffer</Link>
             </Typography>
             <Typography variant='body1' className={classes.exampleLink}>
-              <a href='c/standard/standard'>Standard</a>
+              <Link to='?org=standard&amp;repo=standard'>Standard</Link>
             </Typography>
           </Paper>}
 
         {isValidRepo &&
-          <Route path='/c/:org/:repo'>
+          <div>
             <Intro />
-            <Contributors />
-          </Route>}
+            <Contributors org={org} repo={repo} />
+          </div>}
         <About />
       </div>
     </div>

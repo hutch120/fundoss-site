@@ -23,7 +23,7 @@ async function FetchData ({ url, method, payload }) {
       return null
     }
     const responseJson = await response.json()
-    console.log(responseJson)
+    // console.log(responseJson)
     return responseJson
   } catch (err) {
     console.error('Failed to get data. Reason:', err)

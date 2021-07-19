@@ -14,7 +14,7 @@ export default function App () {
       <div className={classes.root}>
         <div className={classes.workspace}>
           <Header />
-          <Route path='/owner/:org/repo/:repo'>
+          <Route path='/c/:org/:repo'>
             <Contributors />
           </Route>
           <About />

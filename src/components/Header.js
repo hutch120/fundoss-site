@@ -21,8 +21,8 @@ export default function Intro () {
       <Typography variant='h6' className={classes.team}>
         While you are checking out your team, consider the impact these people have on your business.<br />
         What value do these individuals provide?<br />
-        What percentage of your business software relies on these systems operating effectively?<br />
-        Do you think it would be worth supporting the developers to allow them time to maintaining the software?<br />
+        What percentage of your business software relies on the systems they maintain to operate effectively?<br />
+        Do you think it would be worth supporting these developers to allow them time to maintaining this software?<br />
         What would happen if these developers were not maintaining the OSS products your business relies on?
       </Typography>
     </div>

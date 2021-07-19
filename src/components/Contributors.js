@@ -13,7 +13,10 @@ import GithubIcon from '@material-ui/icons/GitHub'
 import PropTypes from 'prop-types'
 import GitHub from '../services/GitHub'
 import { useParams } from 'react-router-dom'
+import words from 'lodash/words'
+import head from 'lodash/head'
 
+const DETAILS_FOR_TOP_X_USERS = 2
 export default function Contributors () {
   const [contributors, setContributors] = useState(null)
   const params = useParams()
@@ -55,11 +58,13 @@ function Profile ({ contributor, org, repo, index }) {
   const [content, setContent] = useState(null)
 
   useEffect(async () => {
-    if (index <= 0) {
+    if (index <= DETAILS_FOR_TOP_X_USERS) {
       const res = await GitHub.GetUser({ login: contributor?.login })
       setContent(res)
     }
   }, [])
+
+  const firstName = head(words(content?.name)) || ''
 
   return (
     <Card className={classes.root}>
@@ -68,12 +73,15 @@ function Profile ({ contributor, org, repo, index }) {
         title={content?.name ?? contributor?.login}
         subheader={content?.blog && <a href={content?.blog}>{content?.blog}</a>}
       />
-      <CardContent>
-        <Typography variant='body2' color='textSecondary' component='p'>
-          {content?.location && content?.name + ' is from ' + content?.location}
-          {contributor?.contributions && ' and has made ' + contributor?.contributions + ' contributions.'}
-        </Typography>
-      </CardContent>
+      {index <= DETAILS_FOR_TOP_X_USERS &&
+        <CardContent>
+          <Typography variant='body2' color='textSecondary' component='p'>
+            {content?.location && firstName + ' is from ' + content?.location}
+          </Typography>
+          <Typography variant='body2' color='textSecondary' component='p'>
+            {(contributor?.contributions && content?.name) && firstName + ' has made ' + contributor?.contributions + ' contributions to ' + repo}
+          </Typography>
+        </CardContent>}
       <CardActions disableSpacing>
         <IconButton aria-label='add to favorites' href={contributor?.fundUrl}>
           <FavoriteIcon />

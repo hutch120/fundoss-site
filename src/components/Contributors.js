@@ -29,7 +29,7 @@ export default function Contributors () {
         id='tschaub'
         desc='Prefers to keep an air of mystery about them.'
         descExtra=''
-        fundUrl='https://github.com/sponsors/ahocevar?o=esb'
+        fundUrl='https://github.com/sponsors/openlayers'
       />
       <Profile
         avatar={'https://avatars.githubusercontent.com/u/49240900?s=60&amp;v=4'}
@@ -37,7 +37,7 @@ export default function Contributors () {
         id='mike-000'
         desc='Prefers to keep an air of mystery about them.'
         descExtra=''
-        fundUrl='https://github.com/sponsors/ahocevar?o=esb'
+        fundUrl='https://github.com/sponsors/openlayers'
       />
       <Profile
         avatar={'https://avatars.githubusercontent.com/u/4426597?s=60&amp;v=4'}
@@ -45,7 +45,7 @@ export default function Contributors () {
         id='moone'
         desc='Prefers to keep an air of mystery about them.'
         descExtra=''
-        fundUrl='https://github.com/sponsors/ahocevar?o=esb'
+        fundUrl='https://github.com/sponsors/openlayers'
       />
     </div>
   )

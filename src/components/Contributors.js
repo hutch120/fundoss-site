@@ -79,14 +79,18 @@ function Profile ({ contributor, org, repo, index }) {
           <Typography variant='body2' color='textSecondary' component='p'>
             {(contributor?.contributions && content?.name) && firstName + ' has made ' + contributor?.contributions + ' contributions to ' + repo}
           </Typography>
+          <Typography variant='body2' color='textSecondary' component='p'>
+            {content?.bio && content?.bio}
+          </Typography>
         </CardContent>}
       <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites' href={contributor?.fundUrl}>
+        <IconButton aria-label='add to favorites' href={`https://github.com/${org}/${repo}`}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label='share' href={`https://github.com/${contributor?.id}`}>
-          <GithubIcon />
-        </IconButton>
+        {contributor?.login &&
+          <IconButton aria-label='share' href={`https://github.com/${contributor?.login}`}>
+            <GithubIcon />
+          </IconButton>}
       </CardActions>
     </Card>
   )

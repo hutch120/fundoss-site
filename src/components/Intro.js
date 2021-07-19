@@ -11,7 +11,7 @@ export default function Intro () {
       <Paper elevation={3} className={classes.paper}>
         <div className={classes.container}>
           <InfoIcon className={classes.icon} />
-          <Typography variant='body' className={classes.intro}>
+          <Typography variant='body1' className={classes.intro}>
             OpenLayers is a high-performance feature-packed Javascript library for creating interactive maps on the web. It can display map tiles, vector data and markers loaded from any source on any web page.
             Openlayers is packed with value and released under the BSD 2-Clause License.
           </Typography>

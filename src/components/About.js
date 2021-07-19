@@ -6,7 +6,7 @@ export default function Intro () {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Typography variant='body' className={classes.subheader}>
+      <Typography variant='body1' className={classes.subheader}>
         FundOSS is OSS! Please check it out <a href='https://github.com/hutch120/fundoss-site'>HERE</a>
       </Typography>
     </div>

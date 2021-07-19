@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import Header from './components/Header'
 import Contributors from './components/Contributors'
@@ -7,13 +8,19 @@ import About from './components/About'
 export default function App () {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <div className={classes.workspace}>
-        <Header />
-        <Contributors />
-        <About />
+    <Router
+      basename='fundoss-site'
+    >
+      <div className={classes.root}>
+        <div className={classes.workspace}>
+          <Header />
+          <Route path='/owner/:org/repo/:repo'>
+            <Contributors />
+          </Route>
+          <About />
+        </div>
       </div>
-    </div>
+    </Router>
   )
 }
 

@@ -26,7 +26,7 @@ export default function Intro () {
           <AccountCircleIcon className={classes.iconAccount} />
           <Typography variant='body' className={classes.intro}>
             Support the project to ensure this software continues to flourish.
-            <br />The top 3 individual contributors in the past 30 days are listed below.
+            <br />The top individual contributors are listed below.
             <br />Please show them some love, so they can continue to do what they love!
           </Typography>
         </div>
